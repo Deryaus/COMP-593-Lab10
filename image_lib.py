@@ -6,7 +6,7 @@ Library of useful functions for working with images.
 --------------------ι𝐍Ⓙย𝐬𝓣ᶤςⒺ Ⓐ𝐍ＹωᕼⒺг𝐄 ᶤ𝐬 ᵃ tｈяᗴＡт ⓉＯ 𝐣υ𝔰ｔ𝐢ᶜⓔ 𝐄V乇яｙ山卄εŘ乇 -------------------- """
 #from apod_api import get_apod_image_url, get_apod_info
 import requests
-import os, ctypes, random, string, struct
+import ctypes, struct
 
 def main():
     
@@ -71,6 +71,7 @@ def set_desktop_background_image(image_path):
     """
     print(f'Setting desktop to {image_path}', end='')
     try:
+        # Check to see if OS is 64 bit
         if struct.calcsize('P') * 8 == 64:
             ctypes.windll.user32.SystemParametersInfoW(20, 0, image_path, 3)
             print('...success!')
