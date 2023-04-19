@@ -51,11 +51,11 @@ def get_pokemon_names(offset=0, limit=100000):
     print('Getting list of pokemon names')
     # Send get request.
     resp_msg = requests.get(POKEMON_SEARCH_URL, params=query_string_params)
-
+    # Check if requeset was successful
     if resp_msg.status_code == requests.codes.ok:
         print('success')
         pokemon_dict = resp_msg.json()
-
+        # Create pokemon list
         pokemon_names_list = [p['name'] for p in pokemon_dict['results']]
         return pokemon_names_list
     else:

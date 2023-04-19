@@ -37,7 +37,7 @@ img_poke = PhotoImage(file=os.path.join(script_dir, 'pokeball.png'))
 lbl_poke_img = ttk.Label(frame, image=img_poke)
 lbl_poke_img.grid(row=0, column=0)
 
-# Add the pokem names to the combobox
+# Add the pokemon names to the combobox
 pokemon_name_list = sorted(poke_api.get_pokemon_names())
 cbox_poke_names = ttk.Combobox(frame, values=pokemon_name_list, state='readonly')
 cbox_poke_names.set("Select A pokemon")
@@ -64,7 +64,7 @@ def handle_set_desktop():
     global image_path
     image_lib.set_desktop_background_image(image_path)
 
-# Create dest as destkop button
+# Create set as destkop button
 btn_set_desktop = ttk.Button(frame, text='Set as desktop Image', command=handle_set_desktop, state=DISABLED)
 btn_set_desktop.grid(row=2, column=0, padx=10, pady=10)
 
